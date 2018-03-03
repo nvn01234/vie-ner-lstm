@@ -12,5 +12,5 @@ def building_ner(num_lstm_layer, num_hidden_node, dropout, time_step, vector_len
                                  recurrent_dropout=dropout), merge_mode='concat'))
     model.add(TimeDistributed(Dense(output_lenght)))
     model.add(Activation('softmax'))
-    model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+    model.compile(optimizer='adam', loss='spares_categorical_crossentropy', metrics=['accuracy'])
     return model
