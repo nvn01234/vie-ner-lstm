@@ -1,4 +1,3 @@
-from versions import print_function, iteritems
 __author__ = 'max'
 
 """
@@ -49,7 +48,7 @@ class Alphabet:
         return len(self.instances) + 1
 
     def iteritems(self):
-        return iteritems(self.instance2index)
+        return self.instance2index.items()
 
     def enumerate_items(self, start=1):
         if start < 1 or start >= self.size():
