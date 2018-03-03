@@ -6,6 +6,14 @@ from datetime import datetime
 from keras.callbacks import EarlyStopping
 import subprocess
 import shlex
+from tensorflow import ConfigProto, Session
+from keras import backend as K
+
+config = ConfigProto()
+config.log_device_placement = False
+config.gpu_options.allow_growth = True
+sess = Session(config=config)
+K.set_session(sess)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--word_dir", help="word surface dict directory")
