@@ -171,7 +171,7 @@ def create_vector_data(word_list_train, word_list_dev, word_list_test, pos_id_li
 
 def create_data(word_dir, vector_dir, train_dir, dev_dir, test_dir):
     embedd_vectors = np.load(vector_dir)
-    with open(word_dir, 'rb', encoding="utf-8") as handle:
+    with open(word_dir, 'rb', encoding="utf8") as handle:
         embedd_words = pickle.load(handle)
     embedd_dim = np.shape(embedd_vectors)[1]
     unknown_embedd = np.random.uniform(-0.01, 0.01, [1, embedd_dim])
