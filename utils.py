@@ -1,7 +1,8 @@
 import codecs
 from alphabet import Alphabet
 import numpy as np
-import cPickle as pickle
+from keras.preprocessing import sequence
+from versions import pickle
 
 
 def read_conll_format(input_file):

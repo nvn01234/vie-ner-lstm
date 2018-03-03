@@ -1,3 +1,4 @@
+from versions import print_function, iteritems
 __author__ = 'max'
 
 """
@@ -41,14 +42,14 @@ class Alphabet:
         try:
             return self.instances[index - 1]
         except IndexError:
-            print 'unknown instance, return the first label.'
+            print('unknown instance, return the first label.')
             return self.instances[0]
 
     def size(self):
         return len(self.instances) + 1
 
     def iteritems(self):
-        return self.instance2index.iteritems()
+        return iteritems(self.instance2index)
 
     def enumerate_items(self, start=1):
         if start < 1 or start >= self.size():
@@ -79,7 +80,7 @@ class Alphabet:
         try:
             json.dump(self.get_content(), open(os.path.join(output_directory, saving_name + ".json"), 'w'))
         except Exception as e:
-            print "Alphabet is not saved"
+            print("Alphabet is not saved")
 
     def load(self, input_directory, name=None):
         """
